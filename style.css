@@ -1,0 +1,576 @@
+:root {
+    --primary-color: #f3b698;
+    --secondary-color: #e1b0ef;
+    --accent-color: #ff85d8;
+    --dark-text: #956697;
+    --medium-text: #e16de7;
+    --light-text-content: #3f3838;
+    --background-color: #f0f2f5;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --font-family-poppins: 'Poppins', sans-serif;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.12);
+    --navbar-height: 50px;
+}
+
+/* General body styling */
+body {
+    font-family: var(--font-family-poppins);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--light-text-content);
+    direction: ltr;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* --- Welcome Section Styling --- */
+.welcome-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* خلفية متدرجة */
+    color: var(--card-background);
+    text-align: center;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+}
+
+.welcome-content {
+    max-width: 800px;
+}
+
+.profile-pic-large {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px none var(--card-background); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic-large:hover {
+    transform: scale(1.05);
+}
+
+.welcome-name {
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    line-height: 1.1;
+}
+
+.welcome-tagline {
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.btn-about-me {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--card-background);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-about-me:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-about-me .fas {
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+/* --- Navigation Bar Styling --- */
+.cv-navbar {
+    background-color: var(--dark-text);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    min-height: var(--navbar-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cv-navbar li {
+    margin: 0 15px;
+}
+
+.cv-navbar a {
+    display: block;
+    color: var(--card-background);
+    text-decoration: none;
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.cv-navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.cv-navbar a:hover::after,
+.cv-navbar a.active::after {
+    width: 100%;
+}
+
+.cv-navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* Main CV Container */
+.cv-container {
+    max-width: 900px;
+    margin: -80px auto 30px auto;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    padding: 40px 60px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.cv-container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Header - Personal Information */
+.personal-info {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 40px;
+    padding-top: 0;
+}
+
+.personal-info .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.personal-info h1 {
+    font-size: 2.8em;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.personal-info .title {
+    font-size: 1.5em;
+    color: var(--medium-text);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* General Section Styling */
+.section-block {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--border-color); 
+    scroll-margin-top: calc(var(--navbar-height) + 20px); /* يضبط تباعد السكشن عن الناف بار الثابت */
+}
+
+.section-block:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Style for all main section headings (h2) */
+.summary h2,
+.education h2,
+.skills h2,
+.projects h2,
+.contact-me h2 {
+    font-size: 2.4em;
+    color: var(--dark-text);
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--secondary-color); 
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-block h2 .section-icon {
+    color: var(--accent-color); 
+    margin-right: 12px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+
+.item {
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background-color: var(--card-background);
+    border-left: 5px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.item h3 {
+    font-size: 1.6em;
+    color: var(--medium-text);
+    margin-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.item p {
+    margin: 5px 0;
+    color: var(--light-text-content);
+    font-size: 1.05em;
+}
+
+.item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.item ul li {
+    margin-bottom: 8px;
+    color: var(--light-text-content);
+    position: relative;
+    padding-left: 25px;
+}
+
+.item ul li::before {
+    content: '\2022'; /* نقطة دائرية */
+    color: var(--primary-color);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+
+.item .company-info,
+.item .duration,
+.item .tech-used {
+    font-size: 0.95em;
+    color: var(--light-text-content);
+    margin-bottom: 8px;
+}
+
+.item .company-info .icon,
+.item .duration .icon,
+.item .tech-used .icon {
+    color: var(--medium-text); 
+    margin-right: 5px;
+}
+
+/* Skills section grid layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skills-category {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--accent-color);
+}
+
+.skills-category h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.skills-category h3 .icon {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.skills-category ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills-category ul li {
+    margin-bottom: 8px;
+    color: var(--light-text-content);
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills-category ul li::before {
+    content: '\f00c'; /* أيقونة علامة صح من Font Awes */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--accent-color);
+    font-size: 0.9em;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+/* --- Contact Me Section Styling --- */
+.contact-me {
+    text-align: center;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.contact-me .contact-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-me .contact-icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-me .contact-icon-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.contact-me .contact-icon-link i {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: var(--medium-text); 
+    transition: color 0.3s ease;
+}
+
+.contact-me .contact-icon-link:hover i {
+    color: var(--accent-color); 
+}
+
+.contact-me .contact-icon-link span {
+    font-weight: 600;
+}
+
+.contact-me .contact-blurb {
+    font-size: 1.15em;
+    color: var(--light-text-content);
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .welcome-section {
+        padding: 60px 20px;
+        min-height: 350px;
+    }
+    .profile-pic-large {
+        width: 160px;
+        height: 160px;
+    }
+    .welcome-name {
+        font-size: 3.5em;
+    }
+    .welcome-tagline {
+        font-size: 1.5em;
+    }
+    .btn-about-me {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+
+    .cv-navbar {
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+
+    .cv-navbar li {
+        margin: 0 8px;
+    }
+
+    .cv-navbar a {
+        padding: 12px 0;
+        font-size: 0.9em;
+    }
+
+    .cv-container {
+        margin: -50px auto 30px auto;
+        padding: 30px 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .personal-info h1 {
+        font-size: 2.5em;
+    }
+
+    .personal-info .title {
+        font-size: 1.5em;
+    }
+
+    .section-block h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .item h3 {
+        font-size: 1.4em;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Me section responsive adjustments */
+    .contact-me .contact-icons {
+        gap: 20px;
+    }
+    .contact-me .contact-icon-link i {
+        font-size: 3em;
+    }
+    .contact-me .contact-icon-link span {
+        font-size: 0.9em;
+    }
+    .contact-me .contact-blurb {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-section {
+        padding: 40px 15px;
+        min-height: 280px;
+    }
+    .profile-pic-large {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    .welcome-name {
+        font-size: 2.8em;
+    }
+    .welcome-tagline {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+    .btn-about-me {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .cv-navbar {
+        min-height: auto;
+        padding: 10px 5px;
+    }
+    .cv-navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cv-navbar li {
+        margin: 5px 0;
+    }
+    .cv-navbar a {
+        padding: 8px 0;
+        font-size: 0.8em;
+    }
+
+    .cv-container {
+        padding: 20px 25px;
+        margin-top: -30px;
+    }
+
+    .personal-info h1 {
+        font-size: 2em;
+    }
+
+    .personal-info .title {
+        font-size: 1.1em;
+    }
+
+    .section-block h2 {
+        font-size: 1.7em;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .section-block h2 .section-icon {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .item {
+        padding: 10px 15px;
+    }
+
+    .item h3 {
+        font-size: 1.2em;
+    }
+
+    .item p, .item ul li, .skills-category ul li {
+        font-size: 0.95em;
+    }
+}
